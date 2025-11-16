@@ -1,4 +1,79 @@
 <!-- components/TopHeaderComponent.html -->
-<div class="top-header">
-   
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<?php
+require_once __DIR__ . '/db.php';
+$topbar = $pdo->query("SELECT * FROM topbar WHERE status='active' ORDER BY id DESC LIMIT 1")->fetch();
+$email = $topbar['email'] ?? '';
+$location = $topbar['location'] ?? '';
+$address = $topbar['address'] ?? '';
+?>
+<div class="top-header animate-down">
+    <div class="topbar-left">
+        <span class="material-icons">email</span>
+        <a href="mailto:<?php echo htmlspecialchars($email); ?>"> <?php echo htmlspecialchars($email); ?> </a>
+    </div>
+    <div class="topbar-center">
+        <span class="material-icons">phone</span>
+        <span><?php echo htmlspecialchars($location); ?></span>
+    </div>
+    <div class="topbar-right">
+        <span class="material-icons">location_on</span>
+        <span><?php echo htmlspecialchars($address); ?></span>
+    </div>
 </div>
+<style>
+.top-header {
+    width: 100vw;
+    background: #08204b;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+    box-sizing: border-box;
+    min-height: 40px;
+    font-size: 1rem;
+    position: relative;
+    z-index: 10;
+}
+.topbar-left, .topbar-center, .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.topbar-center {
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+}
+.topbar-left {
+    flex: 1;
+    justify-content: flex-start;
+}
+.topbar-right {
+    flex: 1;
+    justify-content: flex-end;
+}
+.top-header a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 500;
+}
+.material-icons {
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+.animate-down {
+    animation: slideDown 0.7s cubic-bezier(.39,.575,.565,1) both;
+}
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
