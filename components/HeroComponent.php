@@ -81,7 +81,7 @@ $slides = $pdo->query('SELECT * FROM hero_slides ORDER BY id DESC')->fetchAll();
                         <?php echo htmlspecialchars($slide['description']); ?>
                     </<?php echo $slide['description_level']; ?>>
                     <div class="slide-actions">
-                        <span class="status-<?php echo htmlspecialchars($slide['status']); ?>">Status: <?php echo ucfirst($slide['status']); ?></span>
+                        <span class="status-<?php echo isset($slide['status']) ? htmlspecialchars($slide['status']) : 'active'; ?>">Status: <?php echo isset($slide['status']) ? ucfirst($slide['status']) : 'Active'; ?></span>
                         <a href="?edit=<?php echo $slide['id']; ?>" class="edit-btn">Edit</a>
                         <a href="?delete=<?php echo $slide['id']; ?>" class="delete-btn" onclick="return confirm('Delete this slide?');">Delete</a>
                     </div>
