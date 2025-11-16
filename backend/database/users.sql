@@ -9,6 +9,6 @@ CREATE TABLE users (
 INSERT INTO users (username, password, role)
 VALUES (
     'ETUSL001',
-    '$2y$10$wQwQwQwQwQwQwQwQwQwQwOQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQw', -- Replace with actual hash
+    '$2y$10$ynHur1owUaZIPWbhrxKUlOfdtX8OVRX5ykD0uRS6DJTskg1VcOej2', -- Replace with actual hash
     'super admin'
 );
