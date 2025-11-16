@@ -1,0 +1,21 @@
+/* styles/logo.css */
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Quicksand:wght@400;700&display=swap');
+
+.logo-component {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-img {
+    height: 20px;
+    width: auto;
+}
+
+.logo-text {
+    font-family: 'Italiana', 'Quicksand', Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #222;
+}
