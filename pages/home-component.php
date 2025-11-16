@@ -41,10 +41,7 @@ if (!isset($_SESSION['user_id'])) {
                 <button class="tab" onclick="showTab('sections')">Sections</button>
             </div>
             <div id="hero" class="tab-content active">
-                <div class="hero-section">
-                    <h1>Welcome to the Hero Section</h1>
-                    <p>This is the hero area. You can manage the main banner, headline, and call-to-action here.</p>
-                </div>
+                <?php include __DIR__ . '/../components/HeroComponent.php'; ?>
             </div>
             <div id="sections" class="tab-content">
                 <div class="sections-list">
