@@ -26,8 +26,7 @@ $role = $_SESSION['role'] ?? '';
                 <a href="#" class="dropdown-toggle">Web Management &#9662;</a>
                 <ul class="dropdown-menu">
                     <li><a href="../pages/topbar-crud.php">Top Bar</a></li>
-                    <li><a href="#">Header</a></li>
-                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Home</a></li>
                     <li><a href="#">Footer</a></li>
                 </ul>
             </li>
